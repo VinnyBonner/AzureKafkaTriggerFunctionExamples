@@ -11,7 +11,7 @@ namespace KafkaTrigger.SingleMode
     {
 
         [FunctionName("SingleMode")]
-        public static async Task Run(
+        public static void Run(
             [KafkaTrigger("BrokerList",
                           "SingleMode",
                           Username = "KafkaUser",
@@ -23,27 +23,29 @@ namespace KafkaTrigger.SingleMode
                 databaseName: "KafkaMessages",
                 collectionName: "kafkaContainer",
                 ConnectionStringSetting  = "CosmosDBCon"
-            )] KafkaMessage document,
+            )]out KafkaMessage document,
             ExecutionContext executionContext,
             ILogger log)
         {
 
             try
             {
-                await Task.Delay(TimeSpan.FromSeconds(2));
                 var now = DateTime.UtcNow;
                 var batchGuid = Guid.NewGuid().ToString();
 
-                document.ExecutionTime = now;
-                document.InvocationID = executionContext.InvocationId.ToString();
-                document.MessageGUID = Guid.NewGuid().ToString();
-                document.Message = kafkaEvent.Value;
-                document.Partition = kafkaEvent.Partition;
-                document.KafkaTimeStamp = kafkaEvent.Timestamp;
-                document.MessageOffset = kafkaEvent.Offset.ToString();
-                document.TriggeredFunction = "SingleMode";
+                document = new KafkaMessage
+                {
+                    ExecutionTime = now,
+                    InvocationID = executionContext.InvocationId.ToString(),
+                    MessageGUID = Guid.NewGuid().ToString(),
+                    Message = kafkaEvent.Value,
+                    Partition = kafkaEvent.Partition,
+                    KafkaTimeStamp = kafkaEvent.Timestamp,
+                    MessageOffset = kafkaEvent.Offset.ToString(),
+                    TriggeredFunction = "SingleMode"
+                };                
 
-                document.log(log);
+                document.Log(log);
 
             }
             catch (Exception ex)
