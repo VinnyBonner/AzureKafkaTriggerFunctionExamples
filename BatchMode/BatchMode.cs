@@ -61,7 +61,7 @@ namespace KafkaTrigger.BatchMode
                 if (!Guid.TryParse(Environment.GetEnvironmentVariable("WEBSITE_INSTANCE_ID"), out Guid instanceId))
                     instanceId = Guid.NewGuid();
 
-                throw new Microsoft.Azure.WebJobs.Host.FunctionInvocationException(ex.Message, instanceId, "SingleMode", ex.InnerException);
+                throw new Microsoft.Azure.WebJobs.Host.FunctionInvocationException(ex.Message, instanceId, "BatchMode", ex.InnerException);
             }
         }
     }
