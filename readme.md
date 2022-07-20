@@ -10,6 +10,7 @@ Azure uses Librdkafka to connect to kafka and there are a couple of the settings
 
 ```
 Property                  Applies to      librdkafka equivalent
+----------------------------------------------------------------------
 AutoCommitIntervalMs      Trigger         auto.commit.interval.ms
 FetchMaxBytes             Trigger         fetch.max.bytes
 LibkafkaDebug             Both            debug
