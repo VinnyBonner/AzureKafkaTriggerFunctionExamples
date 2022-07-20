@@ -59,7 +59,7 @@ namespace KafkaTrigger.BatchMode
                 log.LogError($"ERROR: {ex}");
 
                 if (!Guid.TryParse(Environment.GetEnvironmentVariable("WEBSITE_INSTANCE_ID"), out Guid instanceId))
-                    instanceId = Guid.NewGuid();
+                    instanceId = Guid.Empty;
 
                 throw new Microsoft.Azure.WebJobs.Host.FunctionInvocationException(ex.Message, instanceId, "BatchMode", ex.InnerException);
             }
