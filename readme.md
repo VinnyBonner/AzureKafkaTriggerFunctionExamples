@@ -8,6 +8,7 @@ A semi-outdated doc but it has some great information into the architecture of t
 
 Azure uses Librdkafka to connect to kafka and there are a couple of the settings that can be configured via host.json
 
+```
 Property	                Applies to	    librdkafka equivalent
 AutoCommitIntervalMs	    Trigger	        auto.commit.interval.ms
 FetchMaxBytes	            Trigger	        fetch.max.bytes
@@ -22,5 +23,6 @@ ReconnectBackoffMaxMs	    Trigger	        reconnect.backoff.max.ms
 SessionTimeoutMs	        Trigger	        session.timeout.ms
 SocketKeepaliveEnable	    Both	          socket.keepalive.enable
 StatisticsIntervalMs	    Trigger	        statistics.interval.ms
+```
 
 You can review the defaults and descriptions of the librdkafka settings here [Librdkafka Global Configuration Properties](https://docs.confluent.io/platform/current/clients/librdkafka/html/md_CONFIGURATION.html)
