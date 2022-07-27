@@ -27,3 +27,5 @@ StatisticsIntervalMs      Trigger         statistics.interval.ms
 ```
 
 You can review the defaults and descriptions of the librdkafka settings here [Librdkafka Global Configuration Properties](https://docs.confluent.io/platform/current/clients/librdkafka/html/md_CONFIGURATION.html)
+
+### [Azure Functions Kafka Extension Sample Code in Multiple Languages](https://github.com/Azure/azure-functions-kafka-extension/tree/dev/samples)
