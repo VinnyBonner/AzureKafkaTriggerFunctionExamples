@@ -1,6 +1,6 @@
 # Azure Kafka Trigger Function Examples
 
-To Set up a Kafka Cluster and producer see [Confluent Kafka Producer Examples](https://github.com/VinnyBonner/ConfluentKafkaProducerExample)
+To set up a Kafka cluster and producer see [Confluent Kafka Producer Examples](https://github.com/VinnyBonner/ConfluentKafkaProducerExample)
 
 Examples are of [Kafka Trigger Function](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-kafka-trigger?tabs=in-process%2Cconfluent&pivots=programming-language-csharp) in with [CosmosDB Out](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-cosmosdb-v2-output?tabs=in-process%2Cfunctionsv2&pivots=programming-language-csharp)
 
